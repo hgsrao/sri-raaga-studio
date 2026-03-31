@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Raaga Studios</title>
+
+<style>
+body { margin:0; font-family:Arial; background:#020617; color:#fff; }
+
+/* TOP BAR */
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffb347;
+  text-align: center;
+  padding: 8px;
+  z-index: 999;
+}
+
+/* HERO */
+.hero {
+  margin-top:40px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('hero.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  height: 90vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero h2 { font-size:2.5rem; }
+
+/* BUTTONS */
+.btn {
+  padding:10px 20px;
+  border-radius:5px;
+  text-decoration:none;
+  margin:5px;
+}
+.primary { background:#ffb347; color:black; }
+.secondary { border:1px solid white; color:white; }
+
+/* PORTFOLIO */
+.portfolio-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  padding:20px;
+}
+.portfolio-grid img {
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+.lightbox img { max-width:90%; max-height:90%; }
+
+/* SERVICES */
+.services {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:20px;
+}
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* PRICING */
+.price-box {
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+}
+.highlight {
+  background:#ffb347;
+  color:black;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:12px;
+  border-radius:50%;
+  text-decoration:none;
+  color:white;
+  font-size:22px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">📸 Book Your Shoot Now</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h2>Timeless Wedding & Classical Photography</h2>
+  <p>Preserving Stories for Generations</p>
+
+  <a href="#contact" class="btn primary">Book Now</a>
+  <a href="#portfolio" class="btn secondary">View Work</a>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2 style="text-align:center;">Signature Work</h2>
+
+  <div class="portfolio-grid">
+    <img src="1.jpg" onclick="openImg(this)">
+    <img src="2.jpg" onclick="openImg(this)">
+    <img src="3.jpg" onclick="openImg(this)">
+    <img src="4.jpg" onclick="openImg(this)">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
+
+<!-- INSTAGRAM -->
+<section style="text-align:center; padding:40px;">
+  <h2>Follow Us on Instagram</h2>
+  <p>@sriraagaphotostudiomysore</p>
+
+  <a href="https://instagram.com/sriraagaphotostudiomysore" target="_blank" class="btn primary">
+    View Instagram
+  </a>
+</section>
+
+<!-- TESTIMONIALS + REVIEW BUTTON -->
+<section style="padding:40px; text-align:center;">
+  <h2>What Our Clients Say</h2>
+
+  <div class="services">
+    <div class="card">"Amazing work!" - Priya</div>
+    <div class="card">"Very professional!" - Ramesh</div>
+    <div class="card">"Highly recommended!" - Ananya</div>
+  </div>
+
+  <!-- ⭐ GOOGLE REVIEW BUTTON -->
+  <div style="margin-top:20px;">
+    <a href="https://g.page/r/CUMICLbFbJXMEBM/review" target="_blank" class="btn primary">
+      ⭐ Leave Us a Review
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <h2 style="text-align:center;">Services</h2>
+
+  <div class="services">
+    <div class="card">Wedding Photography</div>
+    <div class="card">Portrait Photography</div>
+    <div class="card">Event Coverage</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <h2 style="text-align:center;">Packages</h2>
+
+  <div class="services">
+    <div class="price-box">
+      <h3>Basic</h3>
+      <p>₹15,000</p>
+    </div>
+
+    <div class="price-box highlight">
+      <h3>Premium</h3>
+      <p>₹35,000</p>
+    </div>
+
+    <div class="price-box">
+      <h3>Luxury</h3>
+      <p>₹75,000</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:20px; text-align:center;">
+  <h2>Contact</h2>
+
+  <button onclick="window.location.href='https://wa.me/919833955912?text=Hi I want to book a shoot'">
+    WhatsApp Now
+  </button>
+
+  <br><br>
+
+  <!-- ⭐ SECOND REVIEW LINK -->
+  <a href="https://g.page/r/CUMICLbFbJXMEBM/review" target="_blank">
+    ⭐ Write a Google Review
+  </a>
+</section>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919833955912?text=Hi I want to book a shoot" class="whatsapp">💬</a>
+
+<script>
+function openImg(img){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=img.src;
+}
+function closeImg(){
+  document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+</body>
+</html>
