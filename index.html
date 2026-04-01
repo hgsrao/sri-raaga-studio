@@ -1,144 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sri Raaga Studios - Photo Studio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0f172a;
-      color: #f8fafc;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Raaga Studios</title>
 
-    header {
-      background: linear-gradient(90deg, #0ea5e9, #6366f1);
-      padding: 20px;
-      text-align: center;
-    }
+<style>
+body { margin:0; font-family:Arial; background:#020617; color:#fff; }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
+/* TOP BAR */
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffb347;
+  text-align: center;
+  padding: 8px;
+  z-index: 999;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background-color: #1e293b;
-      padding: 10px;
-    }
-
-    nav a {
-      color: #f8fafc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
-    }
-
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .hero {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.jpg');
-  background-position: center 30%;
+/* HERO */
+.hero {
+  margin-top:40px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('hero.JPG');
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 80vh; /* IMPORTANT */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-    }
+  background-position: center 30%;
+  height: 90vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
+.hero h2 { font-size:2.5rem; }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* BUTTONS */
+.btn {
+  padding:10px 20px;
+  border-radius:5px;
+  text-decoration:none;
+  margin:5px;
+}
+.primary { background:#ffb347; color:black; }
+.secondary { border:1px solid white; color:white; }
 
-    .card {
-      background-color: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+/* PORTFOLIO */
+.portfolio-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  padding:20px;
+}
+.portfolio-grid img {
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
 
-    footer {
-      background-color: #020617;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-  </style>
+/* LIGHTBOX */
+.lightbox {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+.lightbox img { max-width:90%; max-height:90%; }
+
+/* SERVICES */
+.services {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:20px;
+}
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* PRICING */
+.price-box {
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+}
+.highlight {
+  background:#ffb347;
+  color:black;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:12px;
+  border-radius:50%;
+  text-decoration:none;
+  color:white;
+  font-size:22px;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>Sri Raaga Studios</h1>
-  <p>Capturing Moments. Creating Memories.</p>
-</header>
+<div class="top-bar">📸 Book Your Shoot Now</div>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+<!-- HERO -->
+<section class="hero">
+  <h2>Timeless Wedding & Classical Photography</h2>
+  <p>Preserving Stories for Generations</p>
 
-<section id="home" class="hero">
-  <h2>Professional Photo Studio</h2>
-  <p>Weddings | Portraits | Events</p>
+  <a href="#contact" class="btn primary">Book Now</a>
+  <a href="#portfolio" class="btn secondary">View Work</a>
 </section>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>Sri Raaga Studios is a professional photography studio specializing in weddings, portraits, and event photography. We capture your most important moments with creativity and precision.</p>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2 style="text-align:center;">Signature Work</h2>
+
+  <div class="portfolio-grid">
+    <img src="1.JPG" onclick="openImg(this)">
+    <img src="2.JPG" onclick="openImg(this)">
+    <img src="3.JPG" onclick="openImg(this)">
+    <img src="4.JPG" onclick="openImg(this)">
+  </div>
 </section>
 
-<section id="services">
-  <h2>Our Services</h2>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
+
+<!-- INSTAGRAM -->
+<section style="text-align:center; padding:40px;">
+  <h2>Follow Us on Instagram</h2>
+  <p>@sriraagaphotostudiomysore</p>
+
+  <a href="https://instagram.com/sriraagaphotostudiomysore" target="_blank" class="btn primary">
+    View Instagram
+  </a>
+</section>
+
+<!-- TESTIMONIALS + REVIEW BUTTON -->
+<section style="padding:40px; text-align:center;">
+  <h2>What Our Clients Say</h2>
+
   <div class="services">
-    <div class="card">
-      <h3>Wedding Photography</h3>
-      <p>Complete coverage of your special day.</p>
+    <div class="card">"Amazing work!" - Priya</div>
+    <div class="card">"Very professional!" - Ramesh</div>
+    <div class="card">"Highly recommended!" - Ananya</div>
+  </div>
+
+  <!-- ⭐ GOOGLE REVIEW BUTTON -->
+  <div style="margin-top:20px;">
+    <a href="https://g.page/r/CUMICLbFbJXMEBM/review" target="_blank" class="btn primary">
+      ⭐ Leave Us a Review
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <h2 style="text-align:center;">Services</h2>
+
+  <div class="services">
+    <div class="card">Wedding Photography</div>
+    <div class="card">Portrait Photography</div>
+    <div class="card">Event Coverage</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <h2 style="text-align:center;">Packages</h2>
+
+  <div class="services">
+    <div class="price-box">
+      <h3>Basic</h3>
+      <p>₹15,000</p>
     </div>
-    <div class="card">
-      <h3>Portrait Photography</h3>
-      <p>Studio and outdoor professional portraits.</p>
+
+    <div class="price-box highlight">
+      <h3>Premium</h3>
+      <p>₹35,000</p>
     </div>
-    <div class="card">
-      <h3>Event Coverage</h3>
-      <p>Birthdays, corporate events, and more.</p>
-    </div>
-    <div class="card">
-      <h3>Photo Editing</h3>
-      <p>High-end retouching and album design.</p>
+
+    <div class="price-box">
+      <h3>Luxury</h3>
+      <p>₹75,000</p>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: contact@srirraagastudios.com</p>
-  <p>Phone / WhatsApp: +91 98765 43210</p>
+<!-- CONTACT -->
+<section id="contact" style="padding:20px; text-align:center;">
+  <h2>Contact</h2>
+
+  <button onclick="window.location.href='https://wa.me/919833955912?text=Hi I want to book a shoot'">
+    WhatsApp Now
+  </button>
+
+  <br><br>
+
+  <!-- ⭐ SECOND REVIEW LINK -->
+  <a href="https://g.page/r/CUMICLbFbJXMEBM/review" target="_blank">
+    ⭐ Write a Google Review
+  </a>
 </section>
 
-<footer>
-  <p>© 2026 Sri Raaga Studios. All rights reserved.</p>
-</footer>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919833955912?text=Hi I want to book a shoot" class="whatsapp">💬</a>
+
+<script>
+function openImg(img){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=img.src;
+}
+function closeImg(){
+  document.getElementById("lightbox").style.display="none";
+}
+</script>
 
 </body>
 </html>
