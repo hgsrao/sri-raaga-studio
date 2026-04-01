@@ -122,9 +122,10 @@ form input, form button {
 
 <body>
 
+<!-- TOP BAR -->
 <div class="top-bar">
-  <a href="https://wa.me/919844339559" style="color:black; text-decoration:none;">
-    📸 Book Your Shoot Now
+  <a href="https://wa.me/919844339559?text=Hi Sri Raaga Studio, I want to book a shoot" style="color:black; text-decoration:none;">
+    📸 Book Your Shoot Now (Click Here)
   </a>
 </div>
 
@@ -133,7 +134,10 @@ form input, form button {
   <h2>Timeless Wedding & Classical Photography</h2>
   <p>Preserving Stories for Generations</p>
 
-  <a href="https://wa.me/919844339559" class="btn primary">Book on WhatsApp</a>
+  <a href="https://wa.me/919844339559?text=Hi Sri Raaga Studio, I want to book a shoot" class="btn primary">
+    Book on WhatsApp
+  </a>
+
   <a href="#portfolio" class="btn secondary">View Work</a>
 </section>
 
@@ -214,15 +218,35 @@ form input, form button {
   </div>
 </section>
 
-<!-- BOOKING FORM (LEVEL 4 ADDITION) -->
+<!-- 🔥 LEVEL 5 UPGRADED BOOKING -->
 <section style="padding:40px; text-align:center;">
   <h2>Book Your Shoot</h2>
+  <p>⚡ Fastest response via WhatsApp</p>
 
+  <!-- PRIMARY -->
+  <a href="https://wa.me/919844339559?text=Hi Sri Raaga Studio, I want to book a shoot"
+     class="btn primary">💬 Chat on WhatsApp</a>
+
+  <!-- CALL -->
+  <a href="tel:+919844339559" class="btn secondary">📞 Call Now</a>
+
+  <hr style="margin:30px 0; opacity:0.3;">
+
+  <h3>Or Send Inquiry</h3>
+
+  <!-- FORM (SECONDARY) -->
   <form action="https://formsubmit.co/sriraagaphotostudio@gmail.com" method="POST" style="max-width:400px; margin:auto;">
+    
+    <input type="hidden" name="_captcha" value="false">
+
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="text" name="service" placeholder="Type (Wedding / Portrait / Event)">
-    <button type="submit" class="btn primary">Submit</button>
+    <input type="text" name="service" placeholder="Type (Wedding / Event)">
+
+    <button type="submit" class="btn primary">
+      Submit Inquiry
+    </button>
+
   </form>
 </section>
 
@@ -230,9 +254,9 @@ form input, form button {
 <section id="contact" style="padding:20px; text-align:center;">
   <h2>Contact</h2>
 
-  <button onclick="window.location.href='https://wa.me/919844339559?text=Hi I want to book a shoot'">
+  <a href="https://wa.me/919844339559?text=Hi I want to book a shoot" class="btn primary">
     WhatsApp Now
-  </button>
+  </a>
 
   <br><br>
 
